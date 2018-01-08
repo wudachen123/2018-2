@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>niushop用户</title>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"		
+			});
+		</script>	
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 62.5%;
+			}
+			input{
+				outline-color: #75B9F0;
+			}
+			/*顶部导航栏样式*/
+			header{
+				width:100%;
+				height: 10rem;
+				background-color: #2E2E38;	/* 黑色	*/		
+			}
+			header>ul>li{
+				list-style: none;
+				float: left;
+				margin: auto 0.8rem;
+				margin-top: 1rem;
+			}
+			header>ul>li>a{
+				font-size: 1.6rem;
+				color: #999999;
+				text-decoration: none;
+			}
+			#user{
+				color: #ffffff;
+			}
+			header>ul{
+				margin-left: 15%;			
+			}
+			.headerSer{
+				width: 70%;
+				margin-left: 15%;
+				height: 3rem;
+				border: 1px solid white;
+				position: absolute;
+				top: 4.5rem;
+				border:2px solid #1C7544; /*绿色*/
+			}
+			.headerGre{
+				color: white;
+				width: 40%;
+				height: 100%;
+				background-color: #00B147; /*绿色*/
+				font-size: 1.4rem;
+				text-align: center;
+				line-height: 3rem;
+				border: none;
+				outline: none;
+			}
+			
+			.headerSer>div{
+				float: left;
+			}
+			.serInp{
+				border: none;
+				outline: none;
+				width: 60%;
+				height: 100%;
+				background-color:#2E2E38; /*黑色*/
+				
+			}
+			.serInp>input{
+				border: none;
+				outline: none;
+				font-size: 1.4rem;				
+				background-color: #2E2E38;/*黑色*/
+				color: white;
+				position: absolute;
+				width: 48%;
+				height: 100%;
+				top: 0;
+				padding-left: 2%;
+			}
+			.serInp>img{
+				width:13%;
+				height: auto;
+				float: right;
+				margin-top: 4.5%;
+			}
+			
+			/*welcome样式*/
+			.welcome{
+				font-size:1.5rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				color: #6F6F6F;
+			}
+			.line{
+				width:96%;
+				height: 0.05rem;
+				background-color: #CFCFCF;
+				margin: 0 auto;
+			}
+			
+			/*用户列表选项卡操作*/
+			.box{
+				width: 25%;
+				height:3rem;
+				background-color: #00C0FF;
+				color: white;
+				font-size: 1.6rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 3rem;
+				margin-left: 2%;
+			}
+			.box2{
+				width: 25%;
+				height:2.9rem;
+				background-color: #01B044;
+				color: white;
+				font-size: 1.6rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 3rem;
+				float: right;
+				margin-top: -3.1rem;
+				margin-right: 2%;
+			}
+			.line2{
+				width: 96%;
+				height: 0.2rem;
+				background-color: #00C0FF;
+				margin-left: 2%;
+				margin-top: 0rem;
+			}
+				
+			
+			/*比较复杂难写的主要部分*/
+			.main_top{
+				width: 96%;
+				margin-left: 2%;
+				margin-top: 1rem;
+				padding-bottom: 0.8rem;
+				height: 2.5rem;
+				border-top: 0.01rem solid #E3E3E3;
+				border-bottom: 0.01rem solid #E3E3E3;
+				position: relative;
+			}
+			.main_top>ul>li{
+				list-style: none;
+				float: left;	
+				height: 2rem;
+				font-size: 1.5rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 2rem;	
+				color: #999999;			
+				position: absolute;
+			}
+			.main_top>ul>li:nth-of-type(1){
+				left: 7%;
+			}
+			.main_top>ul>li:nth-of-type(2){
+				left:30%;
+			}
+			.main_top>ul>li:nth-of-type(3){
+				left:60%;
+			}
+			.main_top>ul>li:nth-of-type(4){
+				left: 75%;
+			}
+			.main_list{
+				width: 96%;
+				margin-left: 2%;
+				height: 2.5rem;
+				border-bottom: 0.01rem solid #E3E3E3;
+				margin-top: 0.5rem;
+				padding-bottom: 0.3rem;
+				position: relative;
+			}
+			.main_list>ul>li{
+				list-style: none;
+				float: left;	
+				height: 2rem;
+				font-size: 1.5rem;
+				text-align: center;
+				line-height: 2rem;	
+				color: #333333;	
+				position: absolute;
+			}
+			.main_list>ul>li:nth-of-type(1){
+				left: 7%;
+			}
+			.main_list>ul>li:nth-of-type(2){
+				left:30%;
+			}
+			.main_list>ul>li:nth-of-type(3){
+				left:60%;
+				color: #008000;
+			}
+			.main_list>ul>li:nth-of-type(4){
+				left: 75%;
+			}
+			
+			/*main_add样式*/
+			.main_add{
+				width: 96%;
+				margin-left: 2%;
+				height: 2.5rem;
+				border-bottom: 0.01rem solid #E3E3E3;
+				margin-top: 0.5rem;
+				padding-bottom: 0.3rem;
+				position: relative;
+			}
+			.oli{
+				list-style: none;
+				float: left;	
+				height: 2rem;
+				font-size: 1.5rem;
+				text-align: center;
+				line-height: 2rem;	
+				color: #333333;	
+				position: absolute;
+			}
+			.main_add>ul>li:nth-of-type(1){
+				left: 7%;
+			}
+			.main_add>ul>li:nth-of-type(2){
+				left:30%;
+			}
+			.main_add>ul>li:nth-of-type(3){
+				left:60%;
+				color: #008000;
+			}
+			.main_add>ul>li:nth-of-type(4){
+				left: 75%;
+				color: #13A5D5;	
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部导航栏-->
+		<header>
+			<ul>
+				<li><a href="admin.html" id="admin">首页</a></li>
+				<li><a href="order.html" id="order">订单</a></li>
+				<li><a href="marketing.html" id="marketing">营销</a></li>
+				<li><a href="shop.html" id="shop">店铺</a></li>
+				<li><a href="user.html" id="user">用户</a></li>
+			</ul>
+			<div class="headerSer">
+				<div class="headerGre">导航管理</div>
+				<div class="serInp">
+					<input type="text"placeholder="商品搜索"/>
+					<img src="img/serchimg.png"/>
+				</div>
+			</div>
+		</header>
+		 
+		<!--来到niushop111-->
+		<p class="welcome">Welcome&nbsp&nbspniushop&gt;用户</p>
+		<p class="line"></p>		
+		<!--用户列表-->
+		<div class="box">用户列表</div>
+		<div class="box2">添加用户</div>
+		<div class="line2"></div>
+		
+		<!--主要复杂部分-->
+		<div class="main">
+			<div class="main_top">
+				<ul>
+					<li>登录账号</li>
+					<li>所属用户组</li>
+					<li>状态</li>
+					<li>操作</li>
+				</ul>
+			</div>
+			<div class="main_list">
+				<ul>
+					<li class="oli">admin</li>
+					<li class="oli">管理员组</li>
+					<li class="oli">正常</li>
+					<li class="oli">-</li>
+				</ul>
+			</div>
+			<div class="main_add">
+				<ul>
+					<li class="oli">admin23</li>
+					<li class="oli">管理员组</li>
+					<li class="oli">正常</li>
+					<li class="oli">删除</li>
+				</ul>
+			</div>	
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box2= document.getElementsByClassName('box2')[0];
+		var main = document.querySelector('.main');
+		box2.onclick=function(){
+			location.href='add.html';
+		}
+		var ss = sessionStorage;
+		var txt = ss.getItem("user");
+		var txt2 = ss.getItem("pass");
+		var txt3 = ss.getItem("sel");
+		var txt4 = ss.getItem("zhengchang");
+		var txt5 = ss.getItem("shanchu");
+		//动态增加一行
+		function add(){
+			var oDiv = document.createElement('div');
+			main.appendChild(oDiv);
+			
+			var oUl = document.createElement('ul');
+			var oLi1 = document.createElement('li');
+			var oLi2 = document.createElement('li');
+			var oLi3 = document.createElement('li');
+			var oLi4 = document.createElement('li');
+						
+			oDiv.appendChild(oUl);
+			oUl.appendChild(oLi1);
+			oUl.appendChild(oLi2);
+			oUl.appendChild(oLi3);
+			oUl.appendChild(oLi4);
+			oLi1.className='oli';
+			oLi2.className='oli';
+			oLi3.className='oli'; 
+			oLi4.className='oli';						
+			oLi1.innerHTML=txt;
+			oLi2.innerHTML=txt3;
+			oLi3.innerHTML=txt4;
+			oLi4.innerHTML=txt5;	
+			
+			if(oLi1.innerHTML!=""){
+				oDiv.className='main_add';
+			}
+			
+		}	
+		add();
+		
+	</script>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>niushop订单</title>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"		
+			});
+		</script>	
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 62.5%;
+			}
+			input{
+				outline-color: #75B9F0;
+				color: #777777;
+			}
+			select{
+				color: #777777;
+				outline-color: #75B9F0;
+			}
+			option{
+				outline-color: #75B9F0;
+			}
+			/*顶部导航栏样式*/
+			header{
+				width:100%;
+				height: 10rem;
+				background-color: #2E2E38;	/* 黑色	*/		
+			}
+			header>ul>li{
+				list-style: none;
+				float: left;
+				margin: auto 0.8rem;
+				margin-top: 1rem;
+			}
+			header>ul>li>a{
+				font-size: 1.6rem;
+				color: #999999;
+				text-decoration: none;
+			}
+			#order{
+				color: #ffffff;
+			}
+			header>ul{
+				margin-left: 15%;			
+			}
+			.headerSer{
+				width: 70%;
+				margin-left: 15%;
+				height: 3rem;
+				border: 1px solid white;
+				position: absolute;
+				top: 4.5rem;
+				border:2px solid #1C7544; /*绿色*/
+			}
+			.headerGre{
+				color: white;
+				width: 40%;
+				height: 100%;
+				background-color: #00B147; /*绿色*/
+				font-size: 1.4rem;
+				text-align: center;
+				line-height: 3rem;
+				border: none;
+				outline: none;
+			}
+			
+			.headerSer>div{
+				float: left;
+			}
+			.serInp{
+				border: none;
+				outline: none;
+				width: 60%;
+				height: 100%;
+				background-color:#2E2E38; /*黑色*/				
+			}
+			.serInp>input{
+				border: none;
+				outline: none;
+				font-size: 1.4rem;				
+				background-color: #2E2E38;/*黑色*/
+				color: white;
+				position: absolute;
+				width: 48%;
+				height: 100%;
+				top: 0;
+				padding-left: 2%;
+			}
+			.serInp>img{
+				width:13%;
+				height: auto;
+				float: right;
+				margin-top: 4.5%;
+			}
+			
+			/*welcome样式*/
+			.welcome{
+				font-size:1.5rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				color: #6F6F6F;
+			}
+			.line{
+				width:96%;
+				height: 0.05rem;
+				background-color: #CFCFCF;
+				margin: 0 auto;
+			}
+			
+			/*主要部分*/
+			.main{
+				width: 100%;
+				height:30rem;
+			}
+			.list{
+				width:96%;	
+				height: 3rem;
+				margin: 0 auto;
+				margin-top: 0.7rem;
+			}
+			.list>div{
+				float: left;
+				width: 24%;
+				height: 3rem;
+				border: 0.05rem solid #E3E3E3;
+				text-align: center;
+				line-height: 3rem;
+				color: #00C0FF;
+				font-size: 1.4rem;
+			}
+			.list>div:nth-of-type(1){
+				margin-left: 1%;
+			}
+			.line3{
+				width: 97%;
+				height: 0.2rem;
+				background-color: #00C0FF;
+				position: absolute;
+				z-index: 99;
+				left: 3%;	
+			}
+			
+			.serch{
+				width: 100%;
+				height: auto;
+				margin-top: 1rem;
+				
+			}
+			
+			.serch_top{
+				width: 100%;
+				height: 2.5rem;
+				color: #999999;
+			}
+			.serch_center{
+				width: 100%;
+				height: 4.5rem;
+				color: #999999;
+			}
+			.serch_buttom{
+				width: 100%;
+				height: 2.5rem;
+				margin-top: 0.5rem;
+				color: #999999;
+			}
+			.serch_top>div{
+				float: left;
+			}
+			.serch_center>div{
+				float: left;
+			}
+			.serch_buttom>div{
+				float: left;
+			}
+			
+			.data1{
+				font-size:1.4rem;
+				margin-left: 5%;
+				margin-top: 0.2rem;
+			}
+			.data2{
+				margin-left: 3%;
+			}
+			.data2>input{	
+				width: 83%;
+			}
+			.data3{
+				font-size: 1.4rem;
+				margin-left: -2%;
+				margin-top: 0.2rem;
+			}
+			.data4{ 
+				margin-left: 2%;
+			}
+			.data4>input{
+				width: 83%;	
+			}
+			
+			.data5{
+				width: 28%;
+				font-size:1.4rem;
+				text-align: right;
+				margin-top: 0.2rem;
+				margin-left:5%;
+			}
+			.data6{
+				margin-left: 3%;			
+			}
+			.data6>input{
+				height: 1.5rem;
+			}
+			.data7{
+				clear: both;
+				width: 28%;
+				font-size:1.4rem;
+				text-align: right;
+				margin-top: 0.7rem;
+				margin-left:5%;
+			}
+			.data8{ 
+				margin-left: 3%;	
+				margin-top: 0.5rem;			
+			}
+			.data8>input{
+				height: 1.5rem;			
+			}
+			
+			.data9{
+				width: 28%;
+				text-align: right;			
+				margin-left: 5%;
+				font-size: 1.4rem;
+				margin-top: 0.2rem;
+			}
+			
+			.data10{
+				margin-left: 3%;
+			}
+			.data10>select{
+				height:2rem;
+			}
+			.data11{
+				width: 17%;
+				margin-left: 7%;
+			}
+			.data11>button{
+				width: 100%;
+				height: 2rem;
+				border: 0.05rem solid #CCCCCC;
+				background-color: #F5F5F5;
+				outline: none;
+				color: #333333;
+			}
+			
+			.order{
+				width: 100%;
+				height: 10rem;
+			}
+			.orderHeader{
+				margin-top: 1rem;
+				width: 100%;
+				height:2.3rem;
+				border-top: 0.05rem solid #E3E3E3;
+				border-bottom: 0.05rem solid #E3E3E3;
+			}
+			.orderHeader>div{
+				float: left;
+				width: 25%;
+				text-align: center;
+				color: #999999;
+				line-height: 2.3rem;
+				font-size: 1.3rem;
+			}
+			.orderAdd{
+				width: 100%;
+				height: 2rem;
+				border-bottom: 0.05rem solid #E3E3E3;
+			}
+			.orderdata{
+				text-align: center;
+				line-height: 2rem;
+				color: #999999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部导航栏-->
+		<header>
+			<ul>
+				<li><a href="admin.html" id="admin">首页</a></li>
+				<li><a href="order.html" id="order">订单</a></li>
+				<li><a href="marketing.html" id="marketing">营销</a></li>
+				<li><a href="shop.html" id="shop">店铺</a></li>
+				<li><a href="user.html" id="user">用户</a></li>
+			</ul>
+			<div class="headerSer">
+				<div class="headerGre">导航管理</div>
+				<div class="serInp">
+					<input type="text" placeholder="商品搜索"/>
+					<img src="img/serchimg.png"/>
+				</div>
+			</div>
+		</header>
+		
+		<!--来到niushop111-->
+		<p class="welcome">Welcome&nbsp&nbspniushop&gt;订单列表</p>
+		<p class="line"></p>
+		
+		<div class="main">
+			<div class="list">
+				<div>全部</div>
+				<div>待付款</div>
+				<div>待发货</div>
+				<div>已发货</div>
+			</div>
+			<p class="line3"></p>
+			
+			<div class="serch">
+				<div class="serch_top">
+					<div class="data1">下单时间:</div>
+					<div class="data2"><input type="date" /></div>
+					<div class="data3">至</div>
+					<div class="data4"><input type="date" /></div>
+				</div>
+				
+				<div class="serch_center">
+					<div class="data5">收货人姓名:</div>
+					<div class="data6"><input type="text" /></div>
+					<div class="data7">收货人手机号:</div>
+					<div class="data8"><input type="text" /></div>	
+				</div>
+				
+				<div class="serch_buttom">
+					<div class="data9">支付方式:</div>
+					<div class="data10">
+						<select >
+							<option value="支付宝">支付宝</option>
+							<option value="线下支付">线下支付</option>
+						</select>
+					</div>
+					<div class="data11">
+						<button>搜索</button>
+					</div>
+				</div>
+			</div>
+		
+			<div class="order">
+				<div class="orderHeader">
+					<div>商品信息</div>
+					<div>订单金额</div>
+					<div>交易状态</div>
+					<div>操作</div>
+				</div>
+				
+				<div class="orderAdd">
+					<div class="orderdata">暂无符合条件的订单</div>
+				</div>
+			</div>
+			
+			
+		</div>
+	</body>
+</html>

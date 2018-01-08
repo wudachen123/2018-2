@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>niushop营销</title>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"		
+			});
+		</script>	
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 62.5%;
+			}
+			input{
+				outline-color: #75B9F0;
+			}
+			/*顶部导航栏样式*/
+			header{
+				width:100%;
+				height: 10rem;
+				background-color: #2E2E38;	/* 黑色	*/		
+			}
+			header>ul>li{
+				list-style: none;
+				float: left;
+				margin: auto 0.8rem;
+				margin-top: 1rem;
+			}
+			header>ul>li>a{
+				font-size: 1.6rem;
+				color: #999999;
+				text-decoration: none;
+			}
+			#marketing{
+				color: #ffffff;
+			}
+			header>ul{
+				margin-left: 15%;			
+			}
+			.headerSer{
+				width: 70%;
+				margin-left: 15%;
+				height: 3rem;
+				border: 1px solid white;
+				position: absolute;
+				top: 4.5rem;
+				border:2px solid #1C7544; /*绿色*/
+			}
+			.headerGre{
+				color: white;
+				width: 40%;
+				height: 100%;
+				background-color: #00B147; /*绿色*/
+				font-size: 1.4rem;
+				text-align: center;
+				line-height: 3rem;
+				border: none;
+				outline: none;
+			}
+			
+			.headerSer>div{
+				float: left;
+			}
+			.serInp{
+				border: none;
+				outline: none;
+				width: 60%;
+				height: 100%;
+				background-color:#2E2E38; /*黑色*/
+				
+			}
+			.serInp>input{
+				border: none;
+				outline: none;
+				font-size: 1.4rem;				
+				background-color: #2E2E38;/*黑色*/
+				color: white;
+				position: absolute;
+				width: 48%;
+				height: 100%;
+				top: 0;
+				padding-left: 2%;
+			}
+			.serInp>img{
+				width:13%;
+				height: auto;
+				float: right;
+				margin-top: 4.5%;
+			}
+			
+			/*welcome样式*/
+			.welcome{
+				font-size:1.5rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				color: #6F6F6F;
+			}
+			.line{
+				width:96%;
+				height: 0.05rem;
+				background-color: #CFCFCF;
+				margin: 0 auto;
+			}
+			/*用户列表选项卡操作*/
+			.box{
+				width: 25%;
+				height:3rem;
+				background-color: #00C0FF;
+				color: white;
+				font-size: 1.6rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 3rem;
+				margin-left: 2%;
+			}
+			.box2{
+				width: 25%;
+				height:2.9rem;
+				background-color: #01B044;
+				color: white;
+				font-size: 1.4rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 3rem;
+				float: right;
+				margin-top: -3.1rem;
+				margin-right: 2%;
+				border-color: red;
+				outline-color: red;
+			}
+			.line2{
+				width: 96%;
+				height: 0.2rem;
+				background-color: #00C0FF;
+				margin-left: 2%;
+				margin-top: 0rem;
+			}
+			
+			/*搜索优惠券*/
+			.SerchYou{
+				width: 98%;
+				height: 5rem;
+				padding-right: 2%;
+			}
+			.SerchYou>input{
+				float: right;
+				width: 48%;
+				height: 2rem;
+				margin-top: 1rem;	
+				padding-left: 2%;	
+			}
+			.SerchYou>button{
+				float: right;
+				margin-left: 2%;
+				width: 20%;
+				height: 2.2rem;
+				outline: none;
+				border: none;
+				margin-top: 1rem;
+				background-color: #E6E6E6;
+				color: #333333;
+			}
+			.SerchYou>button:hover{
+				background-color: #E6E6E6;
+			}
+			
+			/*主要部分*/
+			.main_top{
+				width: 96%;
+				height: 3rem;
+				margin: 0 auto;
+				border-top: 0.05rem solid #E3E3E3;
+				border-bottom: 0.05rem solid #E3E3E3;
+				margin-top: -0.5rem;
+			}
+			.main_top>div{
+				float: left;
+				text-align: center;
+				line-height: 3rem;
+				height: 3rem;
+				color: #999999;
+			}
+			.yName{
+				width: 30%;	
+			}
+			.yDenom{
+				width: 20%;
+			}
+			.yCount{
+				width:30%;
+			}
+			.yOpera{
+				width: 20%;
+			}
+			
+			/*动态增加的内容*/
+			.concrete{
+				width: 96%;
+				height: 3rem;
+				margin: 0 auto;
+				border-bottom: 0.05rem solid #E3E3E3;
+			}
+			.concrete>div{
+				float: left;
+				text-align: center;
+				line-height: 3rem;
+				color: #666666;
+			}
+			.conName{
+				width: 30%;	
+			}
+			.conDenom{
+				width: 20%;
+			}
+			.conCount{
+				width:30%;
+			}
+			.conOpera{
+				width: 20%;
+			}
+			#conOpera{
+				color: #13A5D5;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部导航栏-->
+		<header>
+			<ul>
+				<li><a href="admin.html" id="admin">首页</a></li>
+				<li><a href="order.html" id="order">订单</a></li>
+				<li><a href="marketing.html" id="marketing">营销</a></li>
+				<li><a href="shop.html" id="shop">店铺</a></li>
+				<li><a href="user.html" id="user">用户</a></li>
+			</ul>
+			<div class="headerSer">
+				<div class="headerGre">导航管理</div>
+				<div class="serInp">
+					<input type="text"placeholder="商品搜索"/>
+					<img src="img/serchimg.png"/>
+				</div>
+			</div>
+		</header>
+		
+		<!--来到niushop111-->
+		<p class="welcome">Welcome&nbsp&nbspniushop&gt;营销</p>
+		<p class="line"></p>
+		<div class="box">优惠券</div>
+		<div class="box2">添加优惠券</div>
+		<div class="line2"></div>
+		
+		<div class="SerchYou">
+			<button>搜索</button>
+			<input type="" placeholder="请输入优惠券名称"/>
+		</div>
+		
+		<!--主要部分-->
+		<div class="main">
+			<div class="main_top">
+				<div class="yName">类型名称</div>
+				<div class="yDenom">面额</div>
+				<div class="yCount">发放数量</div>
+				<div class="yOpera">操作</div>
+			</div>
+			<div class="concrete">
+				<div class="conName">一元夺宝</div>
+				<div class="conDenom">10.00</div>
+				<div class="conCount">10</div>
+				<div class="conOpera" id="conOpera">编辑</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn = document.querySelector('.SerchYou>button');
+		btn.onclick=function(){
+			add()
+		}
+		
+		function add(){
+			//创建一个main
+			var main = document.querySelector('.main');
+			
+			//创建啊concreate
+			var concrete = document.createElement('div');
+			
+			//给concreate增加div
+			var conName= document.createElement('div');
+			var conDenom = document.createElement('div');
+			var conCount= document.createElement('div');
+			var conOpera = document.createElement('div');
+			
+			main.appendChild(concrete);
+			concrete.appendChild(conName);
+			concrete.appendChild(conDenom);
+			concrete.appendChild(conCount);
+			concrete.appendChild(conOpera);
+			
+			concrete.className='concrete';
+			conName.className='conName';
+			conDenom.className='conDenom';
+			conCount.className='conCount';
+			conOpera.className='conOpera';
+			conOpera.id='conOpera';
+			
+			conName.innerHTML='十元夺宝';
+			conDenom.innerHTML='20.00';
+			conCount.innerHTML='5';
+			conOpera.innerHTML='编辑';		
+		}
+		
+		var box2= document.querySelector('.box2');
+		box2.onclick=function(){
+			location.href='updataMark.html'
+		}
+		
+		
+	</script>
+</html>

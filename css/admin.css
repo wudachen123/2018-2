@@ -1,0 +1,363 @@
+*{
+				margin: 0;
+				padding: 0;
+				font-size: 62.5%;
+			}
+			input{
+				outline-color: #75B9F0;
+			}
+			/*顶部导航栏样式*/
+			header{
+				width:100%;
+				height: 10rem;
+				background-color: #2E2E38;	/* 黑色	*/		
+			}
+			header>ul>li{
+				list-style: none;
+				float: left;
+				margin: auto 0.8rem;
+				margin-top: 1rem;
+			}
+			header>ul>li>a{
+				font-size: 1.6rem;
+				color: #999999;
+				text-decoration: none;
+			}
+			#admin{
+				color: #ffffff;
+			}
+			header>ul{
+				margin-left: 15%;			
+			}
+			.headerSer{
+				width: 70%;
+				margin-left: 15%;
+				height: 3rem;
+				border: 1px solid white;
+				position: absolute;
+				top: 4.5rem;
+				border:2px solid #1C7544; /*绿色*/
+			}
+			.headerGre{
+				color: white;
+				width: 40%;
+				height: 100%;
+				background-color: #00B147; /*绿色*/
+				font-size: 1.4rem;
+				text-align: center;
+				line-height: 3rem;
+				border: none;
+				outline: none;
+			}
+			
+			.headerSer>div{
+				float: left;
+			}
+			.serInp{
+				border: none;
+				outline: none;
+				width: 60%;
+				height: 100%;
+				background-color:#2E2E38; /*黑色*/
+				
+			}
+			.serInp>input{
+				border: none;
+				outline: none;
+				font-size: 1.4rem;				
+				background-color: #2E2E38;/*黑色*/
+				color: white;
+				position: absolute;
+				width: 48%;
+				height: 100%;
+				top: 0;
+				padding-left: 2%;
+			}
+			.serInp>img{
+				width:13%;
+				height: auto;
+				float: right;
+				margin-top: 4.5%;
+			}
+			
+			/*网站设置栏样式*/
+			.welcome{
+				font-size:1.5rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				color: #6F6F6F;
+			}
+			.line{
+				width:96%;
+				height: 0.05rem;
+				background-color: #CFCFCF;
+				margin: 0 auto;
+			}
+			.welAdmin{
+				width: 100%;
+				height: 8rem;
+				margin-top: 1rem;
+			}
+			.welAdmin>div{
+				float: left;
+			}
+			.Adleft{
+				width: 18%;
+				height: 6rem;
+				margin-left: 2rem;
+				margin-top: 0.4rem;
+			}
+			.Adleft>img{
+				width: 100%;
+				height: 100%;
+			}
+			.Adright{
+				width:50%;
+				height: 6rem;
+				margin-left: 2.5rem;
+				margin-top: 0.4rem;
+			}
+			.p1{
+				font-size: 1.7rem;
+				font-weight:700;
+			}
+			.p2{			
+				margin-top: 0.4rem;
+			}
+			.p3{
+				margin-top: 0.4rem;
+			}
+			.p2>span{
+				font-size: 1.35rem;
+			}
+			.p3>span{
+				font-size: 1.35rem;
+			}
+			.p2>.managePer{
+				color: #A2A2A2;
+			}
+			.p2>.manageer{
+				color: #666666;
+			}
+			.p3>.interName{
+				color: #999999;
+			}
+			.p3>.interer{
+				color: #999999;
+			}
+			
+			/*店铺及商品提示样式*/
+			.clue{
+				width:85%;
+				height: 2.5rem;
+				background-color: #F7F7F7;
+				border-top: 0.2rem solid #ECECEC;
+				padding-left: 5%;
+				padding-right: 10%;
+			}
+			.storeClue{
+				font-size: 1.7rem;
+				line-height: 2.5rem;
+				color: #333333;
+			}
+			.storeInf{
+				font-size: 1.4rem;
+				float: right;
+				line-height: 2.5rem;
+				color: #999999;
+			}
+			.releaseSit{
+				width:100%;
+				height: 7.5rem;
+				background-color: white;
+			}
+			
+			/*发布情况样式*/
+			.releaseSit>div{
+				width: 20%;
+				height: 5rem;
+				float: left;
+				margin-left: 4%;
+				margin-top: 1rem;
+			}
+			.d1>a,.d2>a,.d3>a,.d4>a{
+				font-size: 2.2rem;
+				text-decoration: none;
+				margin-left: 40%;
+				color: #10BBEE;
+				
+			}
+			.d1>p,.d2>p,.d3>p,.d4>p{
+				text-align: center;
+				margin-top: 0.5rem;
+				font-size: 1.3rem;
+				color: #333333;
+			}
+			
+			/*商家帮助样式*/
+			.sellerHelp{
+				width: 85%;
+				height: 2.5rem;
+				background-color: #F7F7F7;
+				border-top: 0.2rem solid #ECECEC;
+				padding-left: 5%;
+				padding-right: 10%;
+			}
+			/*帮助具体样式*/
+			.concreteHelp{
+				width:100%;
+				height:9rem;
+				background-color: white;
+			}
+			.concreteHelp>ul>li{
+				list-style: none;
+				float: left;
+				width: 25%;
+				height: 2.5rem;
+				background-color: white;
+				margin-left: 6%;
+				margin-top: 1rem;
+				text-align: center;
+				line-height: 2.5rem;
+				border: 0.1rem solid #F1F1F1;
+				box-shadow:-1px 1px 0.8rem #EAEAEA;
+			}
+			.concreteHelp>ul>li>a{
+				text-decoration: none;
+				font-size: 1.3rem;
+				color: #00C0FF;
+			}
+			/*交易详情样式*/
+			.tradeDetails{
+				width:100%;
+				height: 13rem;
+				background-color: white;
+			}
+			.tradeDetails>div{
+				width: 20%;
+				height: 5rem;
+				float: left;
+				margin-left: 4%;
+				margin-top: 1rem;
+			}
+			.f1>a,.f2>a,.f3>a,.f4>a,.f5>a,.f6>a,.f7>a{
+				font-size: 2.2rem;
+				text-decoration: none;
+				margin-left: 40%;
+				color: #10BBEE;	
+			}
+			.f1>p,.f2>p,.f3>p,.f4>p,.f5>p,.f6>p,.f7>p{
+				text-align: center;
+				margin-top: 0.5rem;
+				font-size: 1.3rem;
+				color: #333333;
+			}
+			/*交易提示样式*/
+			.tradePrompt{
+				width: 85%;
+				height: 2.5rem;
+				background-color: #F7F7F7;
+				border-top: 0.2rem solid #ECECEC;
+				padding-left: 5%;
+				padding-right: 10%;
+			}
+			.tradePrompt_2{
+				font-size: 1.7rem;
+				line-height: 2.5rem;
+				color: #333333;
+			}
+			.dealOrder{
+				font-size: 1.4rem;
+				float: right;
+				line-height: 2.5rem;
+				color: #999999;
+			}
+			
+			/*店铺运营推广*/
+			.shopSpread{
+				width: 85%;
+				height: 2.5rem;
+				background-color: #F7F7F7;
+				border-top: 0.2rem solid #ECECEC;
+				padding-left: 5%;
+				padding-right: 10%;
+			}	
+			.shopSpread_2{
+				font-size: 1.7rem;
+				line-height: 2.5rem;
+				color: #333333;
+			}
+			
+			.shopSpread_3{
+				font-size: 1.4rem;
+				float: right;
+				line-height: 2.5rem;
+				color: #999999;
+			}
+			
+			/*店铺推广详情样式*/
+			.spreadDetails{
+				width:100%;
+				height: 25.5rem;
+				background-color: white;		
+			}
+			.spreadDetails>div{
+				float: left;
+				width: 45%;
+				height: 7rem;
+				border-radius: 0.5rem;	
+				margin-top: 1rem;		
+			}
+			.sp1,.sp3,.sp5{
+				margin-left: 3%;
+				
+			}
+			.sp2,.sp4,.sp6{
+				margin-left: 4%;
+			}
+			.sp1{
+				background-color: #FF8C8C;
+			}
+			.sp2{
+				background-color: #33B5CC;
+			}
+			.sp3{
+				background-color: #FF984C;
+			}
+			.sp4{
+				background-color: #33CDA6;
+			}
+			.sp5{
+				background-color: #EDC230;
+			}
+			.sp6{
+				background-color: #7ACE52;
+			}
+			.dv1>img{
+				width: 2rem;
+				margin-top: 0.5rem;
+			}
+			.dv2{
+				margin-left: 20%;
+				margin-top: -2.5rem;
+				font-size: 1.8rem;
+				color: #FFFFFF;
+			}
+			.dv3{
+				margin-left: 70%;
+				font-size: 1.3rem;
+				color: #FFFF00;
+			}
+			.dv4{
+				width: 90%;
+				margin-left: 5%;
+				color: #FFFFFF;
+			}
+			/*底部样式*/
+			.footer{
+				width: 100%;
+				height: 4.5rem;
+				background-color: #F3F1F1;
+				margin-bottom: 0;
+			}

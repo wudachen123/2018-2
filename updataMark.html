@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>niushop店铺</title>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"		
+			});
+		</script>	
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 62.5%;
+			}
+			input{
+				outline-color: #75B9F0;
+			}
+			/*顶部导航栏样式*/
+			header{
+				width:100%;
+				height: 10rem;
+				background-color: #2E2E38;	/* 黑色	*/		
+			}
+			header>ul>li{
+				list-style: none;
+				float: left;
+				margin: auto 0.8rem;
+				margin-top: 1rem;
+			}
+			header>ul>li>a{
+				font-size: 1.6rem;
+				color: #999999;
+				text-decoration: none;
+			}
+			#shop{
+				color: #ffffff;
+			}
+			header>ul{
+				margin-left: 15%;			
+			}
+			.headerSer{
+				width: 70%;
+				margin-left: 15%;
+				height: 3rem;
+				border: 1px solid white;
+				position: absolute;
+				top: 4.5rem;
+				border:2px solid #1C7544; /*绿色*/
+			}
+			.headerGre{
+				color: white;
+				width: 40%;
+				height: 100%;
+				background-color: #00B147; /*绿色*/
+				font-size: 1.4rem;
+				text-align: center;
+				line-height: 3rem;
+				border: none;
+				outline: none;
+			}
+			
+			.headerSer>div{
+				float: left;
+			}
+			.serInp{
+				border: none;
+				outline: none;
+				width: 60%;
+				height: 100%;
+				background-color:#2E2E38; /*黑色*/
+				
+			}
+			.serInp>input{
+				border: none;
+				outline: none;
+				font-size: 1.4rem;				
+				background-color: #2E2E38;/*黑色*/
+				color: white;
+				position: absolute;
+				width: 48%;
+				height: 100%;
+				top: 0;
+				padding-left: 2%;
+			}
+			.serInp>img{
+				width:13%;
+				height: auto;
+				float: right;
+				margin-top: 4.5%;
+			}
+			
+			/*welcome样式*/
+			.welcome{
+				font-size:1.5rem;
+				margin-left: 1rem;
+				margin-top: 0.5rem;
+				margin-bottom: 0.5rem;
+				color: #6F6F6F;
+			}
+			.line{
+				width:96%;
+				height: 0.05rem;
+				background-color: #CFCFCF;
+				margin: 0 auto;
+			}
+			
+			/*用户列表选项卡操作*/
+			.box{
+				width: 25%;
+				height:3rem;
+				background-color: #00C0FF;
+				color: white;
+				font-size: 1.6rem;
+				margin-top: 0.5rem;
+				text-align: center;
+				line-height: 3rem;
+				margin-left: 2%;
+			}
+			.line2{
+				width: 96%;
+				height: 0.2rem;
+				background-color: #00C0FF;
+				margin-left: 2%;
+				margin-top: 0rem;
+			}
+			
+			/*主内容*/
+			.main>div{
+				height: 3.3rem;
+				width: 100%;
+				border-bottom: 0.05rem dotted #E6E6E6;
+				margin-top: 0.5rem;
+				margin-bottom: 0.3rem;
+			}
+			.main>div>div{
+				float: left;
+				line-height: 3rem;
+			}
+			.main_left{
+				width: 25%; 
+				height: 100%;
+				text-align: center;
+				font-size: 1.4rem;
+				margin-left: 7%;
+			}
+			
+			.main_right>input{			
+				height: 1.8rem;
+		
+			}
+			
+			.allPro{
+				line-height: 3rem;					
+			}
+			.allPro>input{
+				margin-left: 20%;
+				margin-right:2%;
+				vertical-align: middle;
+			}
+			.btn{
+				width: 100%;
+				height: 3rem;
+				margin-top: 1rem;
+				text-align: center;
+			}
+			.btn>button{
+				width: 20%;
+				height: 2.5rem;
+				text-align: center;
+				border-radius: 0.2rem;
+				border: none;
+				outline: none;
+				background-color: #51A351;
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--顶部导航栏-->
+		<header>
+			<ul>
+				<li><a href="admin.html" id="admin">首页</a></li>
+				<li><a href="order.html" id="order">订单</a></li>
+				<li><a href="marketing.html" id="marketing">营销</a></li>
+				<li><a href="shop.html" id="shop">店铺</a></li>
+				<li><a href="user.html" id="user">用户</a></li>
+			</ul>	
+			<div class="headerSer">
+				<div class="headerGre">导航管理</div>
+				<div class="serInp">
+					<input type="text" placeholder="商品搜索"/>
+					<img src="img/serchimg.png"/>
+				</div>
+			</div>
+		</header>
+	
+		<!--来到niushop111-->
+		<p class="welcome">Welcome&nbsp&nbspniushop&gt;修改优惠券</p>
+		<p class="line"></p>
+		<!--用户列表-->
+		<div class="box">优惠券</div>
+		<div class="line2"></div>
+		
+		<!--增加优惠券主内容-->
+		<div class="main">
+			<div>
+				<div class="main_left">名称</div>
+				<div class="main_right"><input type="text"/></div>	
+			</div>
+			
+			<div>
+				<div class="main_left">面额</div>
+				<div class="main_right"><input type="text"/></div>	
+			</div>
+			
+			<div>
+				<div class="main_left">数量</div>
+				<div class="main_right"><input type="text"/></div>	
+			</div>
+			
+			<div class="allPro">
+				<input type="radio" checked="checked"/>
+				<span>所有商品</span>
+			</div>
+			
+			
+			
+		</div>
+	
+		<div class="btn">
+			<button>提交</button>
+		</div>
+	
+	</body>
+</html>
